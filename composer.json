@@ -1,0 +1,29 @@
+{
+    "name": "lagdo/ui-builder-bootstrap4",
+    "type": "library",
+    "description": "UI Builder extensions for the Bootstrap 4 framework.",
+    "authors": [
+        {
+            "name": "Thierry Feuzeu",
+            "email": "thierry.feuzeu@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/lagdo/ui-builder-bootstrap",
+    "license": "MIT",
+    "keywords": ["HTML", "UI Builder", "Bootstrap"],
+    "support": {
+        "issues": "https://github.com/lagdo/ui-builder-bootstrap/issues",
+        "source": "https://github.com/lagdo/ui-builder-bootstrap"
+    },
+    "require": {
+        "lagdo/ui-builder": "0.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lagdo\\UiBuilder\\Bootstrap4\\": "src/"
+        },
+        "files": [
+            "src/start.php"
+        ]
+    }
+}
