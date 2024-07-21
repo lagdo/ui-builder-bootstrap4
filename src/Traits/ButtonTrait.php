@@ -2,21 +2,28 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Traits;
 
-use Lagdo\UiBuilder\AbstractBuilder;
-use Lagdo\UiBuilder\BuilderInterface;
-
-use function array_shift;
-use function func_get_args;
+use Lagdo\UiBuilder\Builder as AbstractBuilder;
 
 trait ButtonTrait
 {
     /**
      * @var array
      */
-    protected $buttonStyles = [
-        0 => 'secondary', // The default style is "secondary"
+    protected $mainStyles = [
         AbstractBuilder::BTN_PRIMARY => 'primary',
+        AbstractBuilder::BTN_SECONDARY => 'secondary',
+        AbstractBuilder::BTN_SUCCESS => 'success',
+        AbstractBuilder::BTN_INFO => 'info',
+        AbstractBuilder::BTN_WARNING => 'warning',
         AbstractBuilder::BTN_DANGER => 'danger',
+    ];
+
+    /**
+     * @var array
+     */
+    protected $sizeStyles = [
+        AbstractBuilder::BTN_LARGE => 'lg',
+        AbstractBuilder::BTN_SMALL => 'sm',
     ];
 
     abstract protected function createScope(string $name, array $arguments = []): self;
@@ -37,7 +44,7 @@ trait ButtonTrait
         $this->builder->createScope('div', $arguments);
         $this->builder->prependClass($fullWidth ? 'btn-group d-flex' : 'btn-group');
         $this->builder->setAttribute('role', 'group');
-        $this->scope->isButtonGroup = true;
+        $this->builder->scope()->isButtonGroup = true;
         return $this;
     }
 
@@ -46,14 +53,15 @@ trait ButtonTrait
      *
      * @return string
      */
-    private function buttonStyle(int $flags): string
+    private function mainClass(int $flags): string
     {
-        foreach ($this->buttonStyles as $mask => $value) {
+        foreach ($this->mainStyles as $mask => $value) {
             if ($flags & $mask) {
-                return $value;
+                return ($flags & AbstractBuilder::BTN_OUTLINE) ? "btn btn-outline-$value" : "btn btn-$value";
             }
         }
-        return 'secondary'; // The default style is "secondary"
+        // The default style is "secondary"
+        return ($flags & AbstractBuilder::BTN_OUTLINE) ? 'btn btn-outline-secondary' : 'btn btn-secondary';
     }
 
     /**
@@ -64,13 +72,14 @@ trait ButtonTrait
      */
     private function buttonClass(int $flags, bool $isInButtonGroup): string
     {
-        $style = $this->buttonStyle($flags);
-        $btnClass = ($flags & AbstractBuilder::BTN_OUTLINE) ? "btn btn-outline-$style" : "btn btn-$style";
+        $btnClass = $this->mainClass($flags);
+        foreach ($this->sizeStyles as $mask => $value) {
+            if ($flags & $mask) {
+                $btnClass .= " btn-$value";
+            }
+        }
         if (($flags & AbstractBuilder::BTN_FULL_WIDTH) && !$isInButtonGroup) {
             $btnClass .= ' w-100';
-        }
-        if ($flags & AbstractBuilder::BTN_SMALL) {
-            $btnClass .= ' btn-sm';
         }
         return $btnClass;
     }
@@ -82,15 +91,13 @@ trait ButtonTrait
     {
         // A button in an input group must be wrapped into a div with class "input-group-btn".
         // Check the parent scope.
-        $isInButtonGroup = false;
-        if ($this->scope !== null) {
-            if ($this->scope->isInputGroup) {
-                $this->builder->createWrapper('div', ['class' => 'input-group-append']);
-            }
-            $isInButtonGroup = $this->scope->isButtonGroup;
+        $scope = $this->builder->scope();
+        if($this->scope !== null && $this->scope->isInputGroup)
+        {
+            $this->builder->createWrapper('div', ['class' => 'input-group-append']);
         }
         $this->builder->createScope('button', $arguments);
-        $this->builder->prependClass($this->buttonClass($flags, $isInButtonGroup));
+        $this->builder->prependClass($this->buttonClass($flags, $scope?->isButtonGroup ?? false));
         $this->builder->setAttribute('type', 'button');
         return $this;
     }

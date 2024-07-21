@@ -2,7 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4;
 
-use Lagdo\UiBuilder\AbstractBuilder;
+use Lagdo\UiBuilder\Builder as AbstractBuilder;
 
 class Builder extends AbstractBuilder
 {
@@ -75,7 +75,7 @@ class Builder extends AbstractBuilder
     {
         $this->builder->createScope('div', $arguments);
         $this->builder->prependClass('input-group');
-        $this->scope->isInputGroup = true;
+        $this->builder->scope()->isInputGroup = true;
         return $this;
     }
 
