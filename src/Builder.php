@@ -21,7 +21,7 @@ class Builder extends AbstractBuilder
     /**
      * @inheritDoc
      */
-    public function addIcon(string $icon): BuilderInterface
+    public function addIcon(string $icon): self
     {
         if ($icon === 'remove') {
             $icon = 'x';
@@ -36,7 +36,7 @@ class Builder extends AbstractBuilder
     /**
      * @inheritDoc
      */
-    public function addCaret(): BuilderInterface
+    public function addCaret(): self
     {
         // Nothing to do.
         return $this;
@@ -45,7 +45,7 @@ class Builder extends AbstractBuilder
     /**
      * @inheritDoc
      */
-    public function checkbox(bool $checked = false): BuilderInterface
+    public function checkbox(bool $checked = false): self
     {
         if ($this->scope !== null && $this->scope->isInputGroup) {
             $this->createWrapper('div', ['class' => 'input-group-append']);
@@ -58,7 +58,7 @@ class Builder extends AbstractBuilder
     /**
      * @inheritDoc
      */
-    public function text(): BuilderInterface
+    public function text(): self
     {
         // A label in an input group must be wrapped into a span with class "input-group-addon".
         // Check the parent scope.
@@ -76,7 +76,7 @@ class Builder extends AbstractBuilder
     /**
      * @inheritDoc
      */
-    public function inputGroup(): BuilderInterface
+    public function inputGroup(): self
     {
         $this->createScope('div', func_get_args());
         $this->prependClass('input-group');
@@ -87,7 +87,7 @@ class Builder extends AbstractBuilder
     /**
      * @inheritDoc
      */
-    public function table(bool $responsive, string $style = ''): BuilderInterface
+    public function table(bool $responsive, string $style = ''): self
     {
         if ($responsive) {
             $this->createWrapper('div', ['class' => 'table-responsive']);

@@ -9,20 +9,20 @@ use function func_get_args;
 
 trait PanelTrait
 {
-    abstract protected function createScope(string $name, array $arguments = []): BuilderInterface;
+    abstract protected function createScope(string $name, array $arguments = []): self;
 
-    abstract protected function createWrapper(string $name, array $arguments = []): BuilderInterface;
+    abstract protected function createWrapper(string $name, array $arguments = []): self;
 
-    abstract protected function prependClass(string $class): BuilderInterface;
+    abstract protected function prependClass(string $class): self;
 
-    abstract protected function setAttributes(array $attributes): BuilderInterface;
+    abstract protected function setAttributes(array $attributes): self;
 
-    abstract public function end(): BuilderInterface;
+    abstract public function end(): self;
 
     /**
      * @inheritDoc
      */
-    public function panel(string $style = 'default'): BuilderInterface
+    public function panel(string $style = 'default'): self
     {
         $this->options['card-style'] = $style;
         $arguments = func_get_args();
@@ -35,7 +35,7 @@ trait PanelTrait
     /**
      * @inheritDoc
      */
-    public function panelHeader(): BuilderInterface
+    public function panelHeader(): self
     {
         $style = $this->options['card-style'];
         $this->createScope('div', func_get_args());
@@ -46,7 +46,7 @@ trait PanelTrait
     /**
      * @inheritDoc
      */
-    public function panelBody(): BuilderInterface
+    public function panelBody(): self
     {
         $style = $this->options['card-style'];
         $this->createScope('div', func_get_args());
@@ -57,7 +57,7 @@ trait PanelTrait
     /**
      * @inheritDoc
      */
-    public function panelFooter(): BuilderInterface
+    public function panelFooter(): self
     {
         $style = $this->options['card-style'];
         $this->createScope('div', func_get_args());
