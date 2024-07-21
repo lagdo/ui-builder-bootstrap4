@@ -47,9 +47,9 @@ class Builder extends AbstractBuilder
      */
     public function checkbox(bool $checked = false): self
     {
-        if ($this->scope !== null && $this->scope->isInputGroup) {
-            $this->createWrapper('div', ['class' => 'input-group-append']);
-            $this->createWrapper('div', ['class' => 'input-group-text', 'style' => 'background-color:white;']);
+        if ($this->builder->isInputGroup()) {
+            $this->builder->createWrapper('div', ['class' => 'input-group-append']);
+            $this->builder->createWrapper('div', ['class' => 'input-group-text', 'style' => 'background-color:white;']);
         }
         $arguments = func_get_args();
         return parent::checkbox(...$arguments);
@@ -62,13 +62,13 @@ class Builder extends AbstractBuilder
     {
         // A label in an input group must be wrapped into a span with class "input-group-addon".
         // Check the parent scope.
-        $isInGroup = ($this->scope !== null && $this->scope->isInputGroup);
+        $isInGroup = ($this->builder->isInputGroup());
         if ($isInGroup) {
-            $this->createWrapper('div', ['class' => 'input-group-prepend']);
+            $this->builder->createWrapper('div', ['class' => 'input-group-prepend']);
         }
-        $this->createScope('label', func_get_args());
+        $this->builder->createScope('label', func_get_args());
         if ($isInGroup) {
-            $this->prependClass('input-group-text');
+            $this->builder->prependClass('input-group-text');
         }
         return $this;
     }
@@ -78,8 +78,8 @@ class Builder extends AbstractBuilder
      */
     public function inputGroup(): self
     {
-        $this->createScope('div', func_get_args());
-        $this->prependClass('input-group');
+        $this->builder->createScope('div', func_get_args());
+        $this->builder->prependClass('input-group');
         $this->scope->isInputGroup = true;
         return $this;
     }
@@ -90,13 +90,13 @@ class Builder extends AbstractBuilder
     public function table(bool $responsive, string $style = ''): self
     {
         if ($responsive) {
-            $this->createWrapper('div', ['class' => 'table-responsive']);
+            $this->builder->createWrapper('div', ['class' => 'table-responsive']);
         }
         $arguments = func_get_args();
         array_shift($arguments);
         array_shift($arguments);
-        $this->createScope('table', $arguments);
-        $this->prependClass($style ? "table table-$style" : 'table');
+        $this->builder->createScope('table', $arguments);
+        $this->builder->prependClass($style ? "table table-$style" : 'table');
         return $this;
     }
 }

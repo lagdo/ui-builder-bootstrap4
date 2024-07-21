@@ -27,8 +27,8 @@ trait PanelTrait
         $this->options['card-style'] = $style;
         $arguments = func_get_args();
         array_shift($arguments);
-        $this->createScope('div', $arguments);
-        $this->prependClass("card border-$style w-100");
+        $this->builder->createScope('div', $arguments);
+        $this->builder->prependClass("card border-$style w-100");
         return $this;
     }
 
@@ -38,8 +38,8 @@ trait PanelTrait
     public function panelHeader(): self
     {
         $style = $this->options['card-style'];
-        $this->createScope('div', func_get_args());
-        $this->prependClass("card-header border-$style");
+        $this->builder->createScope('div', func_get_args());
+        $this->builder->prependClass("card-header border-$style");
         return $this;
     }
 
@@ -49,8 +49,8 @@ trait PanelTrait
     public function panelBody(): self
     {
         $style = $this->options['card-style'];
-        $this->createScope('div', func_get_args());
-        $this->prependClass("card-body text-$style");
+        $this->builder->createScope('div', func_get_args());
+        $this->builder->prependClass("card-body text-$style");
         return $this;
     }
 
@@ -60,8 +60,8 @@ trait PanelTrait
     public function panelFooter(): self
     {
         $style = $this->options['card-style'];
-        $this->createScope('div', func_get_args());
-        $this->prependClass("card-footer border-$style");
+        $this->builder->createScope('div', func_get_args());
+        $this->builder->prependClass("card-footer border-$style");
         return $this;
     }
 }
