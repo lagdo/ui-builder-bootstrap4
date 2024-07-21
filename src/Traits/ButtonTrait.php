@@ -32,10 +32,8 @@ trait ButtonTrait
     /**
      * @inheritDoc
      */
-    public function buttonGroup(bool $fullWidth): self
+    public function buttonGroup(bool $fullWidth, ...$arguments): self
     {
-        $arguments = func_get_args();
-        array_shift($arguments);
         $this->builder->createScope('div', $arguments);
         $this->builder->prependClass($fullWidth ? 'btn-group d-flex' : 'btn-group');
         $this->builder->setAttribute('role', 'group');
@@ -80,7 +78,7 @@ trait ButtonTrait
     /**
      * @inheritDoc
      */
-    public function button(int $flags = 0): self
+    public function button(int $flags = 0, ...$arguments): self
     {
         // A button in an input group must be wrapped into a div with class "input-group-btn".
         // Check the parent scope.
@@ -91,8 +89,6 @@ trait ButtonTrait
             }
             $isInButtonGroup = $this->scope->isButtonGroup;
         }
-        $arguments = func_get_args();
-        array_shift($arguments);
         $this->builder->createScope('button', $arguments);
         $this->builder->prependClass($this->buttonClass($flags, $isInButtonGroup));
         $this->builder->setAttribute('type', 'button');

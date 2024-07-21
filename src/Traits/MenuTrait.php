@@ -2,11 +2,6 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Traits;
 
-use Lagdo\UiBuilder\BuilderInterface;
-
-use function array_shift;
-use function func_get_args;
-
 trait MenuTrait
 {
     abstract protected function createScope(string $name, array $arguments = []): self;
@@ -22,9 +17,9 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function menu(): self
+    public function menu(...$arguments): self
     {
-        $this->builder->createScope('div', func_get_args());
+        $this->builder->createScope('div', $arguments);
         $this->builder->prependClass('list-group');
         return $this;
     }
@@ -32,9 +27,9 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function menuItem(): self
+    public function menuItem(...$arguments): self
     {
-        $this->builder->createScope('a', func_get_args());
+        $this->builder->createScope('a', $arguments);
         $this->builder->prependClass('list-group-item list-group-item-action');
         $this->builder->setAttribute('href', 'javascript:void(0)');
         return $this;
@@ -43,9 +38,9 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function menuActiveItem(): self
+    public function menuActiveItem(...$arguments): self
     {
-        $this->builder->createScope('a', func_get_args());
+        $this->builder->createScope('a', $arguments);
         $this->builder->prependClass('list-group-item list-group-item-action active');
         $this->builder->setAttribute('href', 'javascript:void(0)');
         return $this;
@@ -54,9 +49,9 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function menuDisabledItem(): self
+    public function menuDisabledItem(...$arguments): self
     {
-        $this->builder->createScope('a', func_get_args());
+        $this->builder->createScope('a', $arguments);
         $this->builder->prependClass('list-group-item list-group-item-action disabled');
         $this->builder->setAttribute('href', 'javascript:void(0)');
         return $this;
@@ -65,10 +60,10 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function breadcrumb(): self
+    public function breadcrumb(...$arguments): self
     {
         $this->builder->createWrapper('nav', ['aria-label' => 'breadcrumb']);
-        $this->builder->createScope('ol', func_get_args());
+        $this->builder->createScope('ol', $arguments);
         $this->builder->prependClass('breadcrumb');
         return $this;
     }
@@ -76,10 +71,8 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function breadcrumbItem(bool $active): self
+    public function breadcrumbItem(bool $active, ...$arguments): self
     {
-        $arguments = func_get_args();
-        array_shift($arguments);
         $this->builder->createScope('li', $arguments);
         $this->builder->prependClass($active ? 'breadcrumb-item active' : 'breadcrumb-item');
         return $this;
@@ -88,9 +81,9 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function dropdown(): self
+    public function dropdown(...$arguments): self
     {
-        $this->builder->createScope('div', func_get_args());
+        $this->builder->createScope('div', $arguments);
         $this->builder->prependClass('btn-group');
         $this->builder->setAttribute('role', 'group');
         return $this;
@@ -99,10 +92,8 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function dropdownItem(string $style = 'default'): self
+    public function dropdownItem(string $style = 'default', ...$arguments): self
     {
-        $arguments = func_get_args();
-        array_shift($arguments);
         $this->builder->createScope('button', $arguments);
         $this->builder->prependClass("btn btn-$style dropdown-toggle");
         $this->builder->setAttributes(['data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false']);
@@ -112,9 +103,9 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function dropdownMenu(): self
+    public function dropdownMenu(...$arguments): self
     {
-        $this->builder->createScope('div', func_get_args());
+        $this->builder->createScope('div', $arguments);
         $this->builder->prependClass('dropdown-menu');
         return $this;
     }
@@ -122,9 +113,9 @@ trait MenuTrait
     /**
      * @inheritDoc
      */
-    public function dropdownMenuItem(): self
+    public function dropdownMenuItem(...$arguments): self
     {
-        $this->builder->createScope('a', func_get_args());
+        $this->builder->createScope('a', $arguments);
         $this->builder->prependClass('dropdown-item');
         $this->builder->setAttribute('href', '#');
         return $this;

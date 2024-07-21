@@ -2,10 +2,6 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Traits;
 
-use Lagdo\UiBuilder\BuilderInterface;
-
-use function func_get_args;
-
 trait PaginationTrait
 {
     abstract protected function createScope(string $name, array $arguments = []): self;
@@ -21,10 +17,10 @@ trait PaginationTrait
     /**
      * @inheritDoc
      */
-    public function pagination(): self
+    public function pagination(...$arguments): self
     {
         $this->builder->createWrapper('nav', ['aria-label' => '']);
-        $this->builder->createScope('ul', func_get_args());
+        $this->builder->createScope('ul', $arguments);
         $this->builder->prependClass('pagination');
         return $this;
     }
@@ -32,10 +28,10 @@ trait PaginationTrait
     /**
      * @inheritDoc
      */
-    public function paginationItem(): self
+    public function paginationItem(...$arguments): self
     {
         $this->builder->createWrapper('li', ['class' => 'page-item']);
-        $this->builder->createScope('a', func_get_args());
+        $this->builder->createScope('a', $arguments);
         $this->builder->prependClass('page-link');
         return $this;
     }
@@ -43,10 +39,10 @@ trait PaginationTrait
     /**
      * @inheritDoc
      */
-    public function paginationActiveItem(): self
+    public function paginationActiveItem(...$arguments): self
     {
         $this->builder->createWrapper('li', ['class' => 'page-item active']);
-        $this->builder->createScope('a', func_get_args());
+        $this->builder->createScope('a', $arguments);
         $this->builder->prependClass('page-link');
         return $this;
     }
@@ -54,10 +50,10 @@ trait PaginationTrait
     /**
      * @inheritDoc
      */
-    public function paginationDisabledItem(): self
+    public function paginationDisabledItem(...$arguments): self
     {
         $this->builder->createWrapper('li', ['class' => 'disabled']);
-        $this->builder->createScope('span', func_get_args());
+        $this->builder->createScope('span', $arguments);
         $this->builder->prependClass('page-link');
         return $this;
     }

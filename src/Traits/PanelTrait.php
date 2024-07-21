@@ -2,11 +2,6 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Traits;
 
-use Lagdo\UiBuilder\BuilderInterface;
-
-use function array_shift;
-use function func_get_args;
-
 trait PanelTrait
 {
     abstract protected function createScope(string $name, array $arguments = []): self;
@@ -22,11 +17,9 @@ trait PanelTrait
     /**
      * @inheritDoc
      */
-    public function panel(string $style = 'default'): self
+    public function panel(string $style = 'default', ...$arguments): self
     {
         $this->options['card-style'] = $style;
-        $arguments = func_get_args();
-        array_shift($arguments);
         $this->builder->createScope('div', $arguments);
         $this->builder->prependClass("card border-$style w-100");
         return $this;
@@ -35,10 +28,10 @@ trait PanelTrait
     /**
      * @inheritDoc
      */
-    public function panelHeader(): self
+    public function panelHeader(...$arguments): self
     {
         $style = $this->options['card-style'];
-        $this->builder->createScope('div', func_get_args());
+        $this->builder->createScope('div', $arguments);
         $this->builder->prependClass("card-header border-$style");
         return $this;
     }
@@ -46,10 +39,10 @@ trait PanelTrait
     /**
      * @inheritDoc
      */
-    public function panelBody(): self
+    public function panelBody(...$arguments): self
     {
         $style = $this->options['card-style'];
-        $this->builder->createScope('div', func_get_args());
+        $this->builder->createScope('div', $arguments);
         $this->builder->prependClass("card-body text-$style");
         return $this;
     }
@@ -57,10 +50,10 @@ trait PanelTrait
     /**
      * @inheritDoc
      */
-    public function panelFooter(): self
+    public function panelFooter(...$arguments): self
     {
         $style = $this->options['card-style'];
-        $this->builder->createScope('div', func_get_args());
+        $this->builder->createScope('div', $arguments);
         $this->builder->prependClass("card-footer border-$style");
         return $this;
     }
