@@ -3,6 +3,7 @@
 namespace Lagdo\UiBuilder\Bootstrap4\Traits;
 
 use Lagdo\UiBuilder\Builder as AbstractBuilder;
+use Lagdo\UiBuilder\BuilderInterface;
 
 trait ButtonTrait
 {
@@ -26,12 +27,12 @@ trait ButtonTrait
         AbstractBuilder::BTN_SMALL => 'sm',
     ];
 
-    abstract public function end(): self;
+    abstract public function end(): BuilderInterface;
 
     /**
      * @inheritDoc
      */
-    public function buttonGroup(bool $fullWidth, ...$arguments): self
+    public function buttonGroup(bool $fullWidth, ...$arguments): BuilderInterface
     {
         $this->builder->createScope('div', $arguments);
         $this->builder->prependClass($fullWidth ? 'btn-group d-flex' : 'btn-group');
@@ -79,12 +80,12 @@ trait ButtonTrait
     /**
      * @inheritDoc
      */
-    public function button(int $flags = 0, ...$arguments): self
+    public function button(int $flags = 0, ...$arguments): BuilderInterface
     {
         // A button in an input group must be wrapped into a div with class "input-group-btn".
         // Check the parent scope.
         $scope = $this->builder->scope();
-        if($this->scope !== null && $this->scope->isInputGroup)
+        if($scope !== null && $scope->isInputGroup)
         {
             $this->builder->createWrapper('div', ['class' => 'input-group-append']);
         }
