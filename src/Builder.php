@@ -27,7 +27,7 @@ class Builder extends AbstractBuilder
         } elseif ($icon === 'ok') {
             $icon = 'check';
         }
-        return $this->addHtml('<i class="bi bi-' . $icon . '"></i>');
+        return $this->addHtml('<i class="fa fa-' . $icon . '"></i>');
     }
 
     /**

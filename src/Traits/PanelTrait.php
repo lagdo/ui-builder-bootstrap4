@@ -6,6 +6,8 @@ use Lagdo\UiBuilder\BuilderInterface;
 
 trait PanelTrait
 {
+    private $options = [];
+
     abstract public function end(): BuilderInterface;
 
     /**
