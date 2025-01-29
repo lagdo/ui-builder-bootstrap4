@@ -22,9 +22,9 @@ trait PaginationTrait
     /**
      * @inheritDoc
      */
-    public function paginationItem(...$arguments): BuilderInterface
+    public function paginationItem(int $nPageNumber, ...$arguments): BuilderInterface
     {
-        $this->builder->createWrapper('li', ['class' => 'page-item']);
+        $this->builder->createWrapper('li', ['class' => 'page-item enabled', 'data-page' => $nPageNumber]);
         $this->builder->createScope('a', $arguments);
         $this->builder->prependClass('page-link');
         return $this;
@@ -33,9 +33,9 @@ trait PaginationTrait
     /**
      * @inheritDoc
      */
-    public function paginationActiveItem(...$arguments): BuilderInterface
+    public function paginationActiveItem(int $nPageNumber, ...$arguments): BuilderInterface
     {
-        $this->builder->createWrapper('li', ['class' => 'page-item active']);
+        $this->builder->createWrapper('li', ['class' => 'page-item active', 'data-page' => $nPageNumber]);
         $this->builder->createScope('a', $arguments);
         $this->builder->prependClass('page-link');
         return $this;
@@ -44,7 +44,7 @@ trait PaginationTrait
     /**
      * @inheritDoc
      */
-    public function paginationDisabledItem(...$arguments): BuilderInterface
+    public function paginationDisabledItem(int $nPageNumber, ...$arguments): BuilderInterface
     {
         $this->builder->createWrapper('li', ['class' => 'disabled']);
         $this->builder->createScope('span', $arguments);
