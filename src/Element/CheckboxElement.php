@@ -22,7 +22,7 @@ class CheckboxElement extends BaseElement
      *
      * @return void
      */
-    protected function onBuild(Element $parent): void
+    public function onBuild(Element $parent): void
     {
         if (is_a($parent, InputGroupElement::class)) {
             $this->addWrapper('div',
