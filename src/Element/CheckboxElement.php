@@ -24,9 +24,9 @@ class CheckboxElement extends BaseElement
     protected function onBuild(Element $parent): void
     {
         if (is_a($parent, InputGroupElement::class)) {
-            $this->addWrapper('div', ['class' => 'input-group-append']);
             $this->addWrapper('div',
                 ['class' => 'input-group-text', 'style' => 'background-color:white;']);
+            $this->addWrapper('div', ['class' => 'input-group-append']);
         }
     }
 }
