@@ -13,6 +13,7 @@ class CheckboxElement extends BaseElement
      */
     protected function onCreate(): void
     {
+        $this->addBaseClass('form-check-input');
         $this->setAttribute('type', 'checkbox');
     }
 
