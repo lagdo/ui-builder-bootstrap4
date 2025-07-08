@@ -17,7 +17,7 @@ class TabNavItemElement extends BaseElement
     protected function onCreate(): void
     {
         $this->setAttributes(['data-toggle' => 'tab', 'role' => 'tab']);
-        $this->prependClass('nav-link');
+        $this->addBaseClass('nav-link');
         $this->addWrapper('li', ['class' => 'nav-item', 'role' => 'presentation']);
     }
 
@@ -39,7 +39,7 @@ class TabNavItemElement extends BaseElement
      */
     public function active(bool $active = false): static
     {
-        $active && $this->appendClass('active');
+        $active && $this->addClass('active');
         return $this;
     }
 
@@ -50,7 +50,7 @@ class TabNavItemElement extends BaseElement
      */
     public function enabled(bool $enabled): static
     {
-        !$enabled && $this->appendClass('disabled');
+        !$enabled && $this->addClass('disabled');
         return $this;
     }
 }

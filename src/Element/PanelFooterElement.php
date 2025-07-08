@@ -11,7 +11,7 @@ class PanelFooterElement extends BaseElement
      */
     protected function onCreate(): void
     {
-        $this->prependClass('card-footer');
+        $this->addBaseClass('card-footer');
     }
 
     /**
@@ -21,7 +21,7 @@ class PanelFooterElement extends BaseElement
      */
     public function style(string $style): static
     {
-        $this->appendClass("border-$style");
+        $this->addClass("border-$style");
         return $this;
     }
 }

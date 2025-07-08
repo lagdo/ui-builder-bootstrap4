@@ -11,7 +11,7 @@ class BreadcrumbElement extends BaseElement
      */
     protected function onCreate(): void
     {
-        $this->prependClass('breadcrumb');
+        $this->addBaseClass('breadcrumb');
         $this->addWrapper('nav', ['aria-label' => 'breadcrumb']);
     }
 }

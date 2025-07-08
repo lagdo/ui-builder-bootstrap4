@@ -11,7 +11,7 @@ class PaginationElement extends BaseElement
      */
     protected function onCreate(): void
     {
-        $this->prependClass('pagination');
+        $this->addBaseClass('pagination');
         $this->addWrapper('nav', ['aria-label' => '']);
     }
 }

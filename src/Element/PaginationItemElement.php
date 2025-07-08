@@ -11,7 +11,7 @@ class PaginationItemElement extends BaseElement
      */
     protected function onCreate(): void
     {
-        $this->prependClass('page-link');
+        $this->addBaseClass('page-link');
         $this->addWrapper('li', ['class' => 'page-item']);
     }
 

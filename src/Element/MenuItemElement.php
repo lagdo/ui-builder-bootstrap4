@@ -11,6 +11,6 @@ class MenuItemElement extends BaseElement
      */
     protected function onCreate(): void
     {
-        $this->prependClass('list-group-item list-group-item-action');
+        $this->addBaseClass('list-group-item list-group-item-action');
     }
 }

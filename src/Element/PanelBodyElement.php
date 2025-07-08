@@ -11,7 +11,7 @@ class PanelBodyElement extends BaseElement
      */
     protected function onCreate(): void
     {
-        $this->prependClass('card-body');
+        $this->addBaseClass('card-body');
     }
 
     /**
@@ -21,7 +21,7 @@ class PanelBodyElement extends BaseElement
      */
     public function style(string $style): static
     {
-        $this->appendClass("text-$style");
+        $this->addClass("text-$style");
         return $this;
     }
 }

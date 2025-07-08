@@ -27,7 +27,7 @@ class TextElement extends BaseElement
     {
         // A label in an input group must be wrapped into a span with class "input-group-prepend".
         if (is_a($parent, InputGroupElement::class)) {
-            $this->prependClass('input-group-text');
+            $this->addBaseClass('input-group-text');
             $this->addWrapper('div', ['class' => 'input-group-prepend']);
         }
     }

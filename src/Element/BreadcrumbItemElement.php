@@ -11,6 +11,6 @@ class BreadcrumbItemElement extends BaseElement
      */
     protected function onCreate(): void
     {
-        $this->prependClass('breadcrumb-item');
+        $this->addBaseClass('breadcrumb-item');
     }
 }

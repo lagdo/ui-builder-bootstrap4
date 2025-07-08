@@ -11,7 +11,7 @@ class PanelHeaderElement extends BaseElement
      */
     protected function onCreate(): void
     {
-        $this->prependClass('card-header');
+        $this->addBaseClass('card-header');
     }
 
     /**
@@ -21,7 +21,7 @@ class PanelHeaderElement extends BaseElement
      */
     public function style(string $style): static
     {
-        $this->appendClass("border-$style");
+        $this->addClass("border-$style");
         return $this;
     }
 }
