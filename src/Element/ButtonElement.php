@@ -56,7 +56,7 @@ class ButtonElement extends BaseElement
         } elseif ($icon === 'ok') {
             $icon = 'check';
         }
-        $this->addHtml('<i class="fa fa-' . $icon . '"></i>');
+        $this-addHtml('<i class="fa fa-' . $icon . '"></i>');
         return $this;
     }
 
