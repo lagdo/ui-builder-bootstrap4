@@ -2,12 +2,12 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Builder;
 
-use Lagdo\UiBuilder\Bootstrap4\Element\BadgeElement;
-use Lagdo\UiBuilder\Bootstrap4\Element\ButtonElement;
-use Lagdo\UiBuilder\Bootstrap4\Element\ButtonGroupElement;
-use Lagdo\UiBuilder\Element\BadgeInterface;
-use Lagdo\UiBuilder\Element\ButtonGroupInterface;
-use Lagdo\UiBuilder\Element\ButtonInterface;
+use Lagdo\UiBuilder\Bootstrap4\Component\BadgeElement;
+use Lagdo\UiBuilder\Bootstrap4\Component\ButtonElement;
+use Lagdo\UiBuilder\Bootstrap4\Component\ButtonGroupElement;
+use Lagdo\UiBuilder\Component\BadgeInterface;
+use Lagdo\UiBuilder\Component\ButtonGroupInterface;
+use Lagdo\UiBuilder\Component\ButtonInterface;
 
 trait ButtonTrait
 {

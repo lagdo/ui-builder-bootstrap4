@@ -1,17 +1,17 @@
 <?php
 
-namespace Lagdo\UiBuilder\Bootstrap4\Element;
+namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Element\Html\PanelHeaderElement as BaseElement;
+use Lagdo\UiBuilder\Component\Html\PanelFooterElement as BaseElement;
 
-class PanelHeaderElement extends BaseElement
+class PanelFooterElement extends BaseElement
 {
     /**
      * @return void
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('card-header');
+        $this->addBaseClass('card-footer');
     }
 
     /**

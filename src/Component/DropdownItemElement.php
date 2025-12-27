@@ -1,8 +1,8 @@
 <?php
 
-namespace Lagdo\UiBuilder\Bootstrap4\Element;
+namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Element\Html\DropdownItemElement as BaseElement;
+use Lagdo\UiBuilder\Component\Html\DropdownItemElement as BaseElement;
 
 class DropdownItemElement extends BaseElement
 {

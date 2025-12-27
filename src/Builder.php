@@ -3,11 +3,11 @@
 namespace Lagdo\UiBuilder\Bootstrap4;
 
 use Lagdo\UiBuilder\AbstractBuilder;
-use Lagdo\UiBuilder\Bootstrap4\Element\LabelElement;
-use Lagdo\UiBuilder\Bootstrap4\Element\TableElement;
-use Lagdo\UiBuilder\Element\LabelInterface;
-use Lagdo\UiBuilder\Element\RowInterface;
-use Lagdo\UiBuilder\Element\TableInterface;
+use Lagdo\UiBuilder\Bootstrap4\Component\LabelElement;
+use Lagdo\UiBuilder\Bootstrap4\Component\TableElement;
+use Lagdo\UiBuilder\Component\LabelInterface;
+use Lagdo\UiBuilder\Component\RowInterface;
+use Lagdo\UiBuilder\Component\TableInterface;
 
 class Builder extends AbstractBuilder
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Lagdo\UiBuilder\Bootstrap4\Element;
+namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Element\Html\TabContentItemElement as BaseElement;
+use Lagdo\UiBuilder\Component\Html\TabContentItemElement as BaseElement;
 
 class TabContentItemElement extends BaseElement
 {
