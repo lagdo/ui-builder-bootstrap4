@@ -2,15 +2,15 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\Html\RowElement as BaseElement;
+use Lagdo\UiBuilder\Component\MenuComponent as BaseComponent;
 
-class RowElement extends BaseElement
+class MenuComponent extends BaseComponent
 {
     /**
      * @return void
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('row');
+        $this->addBaseClass('list-group');
     }
 }

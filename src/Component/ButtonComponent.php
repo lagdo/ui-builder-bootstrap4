@@ -2,12 +2,12 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\Html\ButtonElement as BaseElement;
-use Lagdo\UiBuilder\Builder\Html\Element;
+use Lagdo\UiBuilder\Component\Base\HtmlComponent;
+use Lagdo\UiBuilder\Component\ButtonComponent as BaseComponent;
 
 use function is_a;
 
-class ButtonElement extends BaseElement
+class ButtonComponent extends BaseComponent
 {
     /**
      * @var bool
@@ -29,17 +29,17 @@ class ButtonElement extends BaseElement
     }
 
     /**
-     * @param Element $parent
+     * @param HtmlComponent $parent
      *
      * @return void
      */
-    public function onBuild(Element $parent): void
+    public function onBuild(HtmlComponent $parent): void
     {
-        if ($this->fullWidth && !is_a($parent, ButtonGroupElement::class)) {
+        if ($this->fullWidth && !is_a($parent, ButtonGroupComponent::class)) {
             $this->addClass('w-100');
         }
         // A button in an input group must be wrapped into a div with class "input-group-append".
-        if (is_a($parent, InputGroupElement::class)) {
+        if (is_a($parent, InputGroupComponent::class)) {
             $this->addWrapper('div', ['class' => 'input-group-append']);
         }
     }

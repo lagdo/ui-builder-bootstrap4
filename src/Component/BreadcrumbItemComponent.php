@@ -2,9 +2,9 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\Html\BreadcrumbItemElement as BaseElement;
+use Lagdo\UiBuilder\Component\BreadcrumbItemComponent as BaseComponent;
 
-class BreadcrumbItemElement extends BaseElement
+class BreadcrumbItemComponent extends BaseComponent
 {
     /**
      * @inheritDoc
