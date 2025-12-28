@@ -19,7 +19,7 @@ class PanelFooterComponent extends BaseComponent
      *
      * @return static
      */
-    public function style(string $style): static
+    public function look(string $style): static
     {
         $this->addClass("border-$style");
         return $this;

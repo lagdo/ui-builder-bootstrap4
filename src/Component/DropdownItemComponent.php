@@ -22,7 +22,7 @@ class DropdownItemComponent extends BaseComponent
      *
      * @return static
      */
-    public function style(string $style): static
+    public function look(string $style): static
     {
         $this->addBaseClass("btn-$style");
         return $this;
