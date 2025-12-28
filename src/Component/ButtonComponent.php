@@ -33,7 +33,7 @@ class ButtonComponent extends BaseComponent
      *
      * @return void
      */
-    public function onBuild(HtmlComponent $parent): void
+    protected function onBuild(HtmlComponent $parent): void
     {
         if ($this->fullWidth && !is_a($parent, ButtonGroupComponent::class)) {
             $this->addClass('w-100');
@@ -56,7 +56,7 @@ class ButtonComponent extends BaseComponent
         } elseif ($icon === 'ok') {
             $icon = 'check';
         }
-        $this-addHtml('<i class="fa fa-' . $icon . '"></i>');
+        $this->addHtml('<i class="fa fa-' . $icon . '"></i>');
         return $this;
     }
 
