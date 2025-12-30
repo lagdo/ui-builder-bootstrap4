@@ -11,7 +11,7 @@ class PanelBodyComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('card-body');
+        $this->element()->addBaseClass('card-body');
     }
 
     /**
@@ -21,7 +21,7 @@ class PanelBodyComponent extends BaseComponent
      */
     public function look(string $style): static
     {
-        $this->addClass("text-$style");
+        $this->element()->addClass("text-$style");
         return $this;
     }
 }

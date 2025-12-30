@@ -24,8 +24,8 @@ class ButtonComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('btn');
-        $this->setAttribute('type', 'button');
+        $this->element()->addBaseClass('btn');
+        $this->element()->setAttribute('type', 'button');
     }
 
     /**
@@ -36,7 +36,7 @@ class ButtonComponent extends BaseComponent
     protected function onBuild(HtmlComponent $parent): void
     {
         if ($this->fullWidth && !is_a($parent, ButtonGroupComponent::class)) {
-            $this->addClass('w-100');
+            $this->element()->addClass('w-100');
         }
         // A button in an input group must be wrapped into a div with class "input-group-append".
         if (is_a($parent, InputGroupComponent::class)) {
@@ -74,7 +74,7 @@ class ButtonComponent extends BaseComponent
      */
     public function large(): static
     {
-        $this->addClass('btn-lg');
+        $this->element()->addClass('btn-lg');
         return $this;
     }
 
@@ -83,7 +83,7 @@ class ButtonComponent extends BaseComponent
      */
     public function small(): static
     {
-        $this->addClass('btn-sm');
+        $this->element()->addClass('btn-sm');
         return $this;
     }
 
@@ -92,7 +92,7 @@ class ButtonComponent extends BaseComponent
      */
     public function primary(): static
     {
-        $this->addClass($this->outline ? 'btn-outline-primary' : 'btn-primary');
+        $this->element()->addClass($this->outline ? 'btn-outline-primary' : 'btn-primary');
         return $this;
     }
 
@@ -101,7 +101,7 @@ class ButtonComponent extends BaseComponent
      */
     public function secondary(): static
     {
-        $this->addClass($this->outline ? 'btn-outline-secondary' : 'btn-secondary');
+        $this->element()->addClass($this->outline ? 'btn-outline-secondary' : 'btn-secondary');
         return $this;
     }
 
@@ -110,7 +110,7 @@ class ButtonComponent extends BaseComponent
      */
     public function success(): static
     {
-        $this->addClass($this->outline ? 'btn-outline-success' : 'btn-success');
+        $this->element()->addClass($this->outline ? 'btn-outline-success' : 'btn-success');
         return $this;
     }
 
@@ -119,7 +119,7 @@ class ButtonComponent extends BaseComponent
      */
     public function info(): static
     {
-        $this->addClass($this->outline ? 'btn-outline-info' : 'btn-info');
+        $this->element()->addClass($this->outline ? 'btn-outline-info' : 'btn-info');
         return $this;
     }
 
@@ -128,7 +128,7 @@ class ButtonComponent extends BaseComponent
      */
     public function warning(): static
     {
-        $this->addClass($this->outline ? 'btn-outline-warning' : 'btn-warning');
+        $this->element()->addClass($this->outline ? 'btn-outline-warning' : 'btn-warning');
         return $this;
     }
 
@@ -137,7 +137,7 @@ class ButtonComponent extends BaseComponent
      */
     public function danger(): static
     {
-        $this->addClass($this->outline ? 'btn-outline-danger' : 'btn-danger');
+        $this->element()->addClass($this->outline ? 'btn-outline-danger' : 'btn-danger');
         return $this;
     }
 

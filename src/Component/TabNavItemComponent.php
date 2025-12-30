@@ -16,8 +16,8 @@ class TabNavItemComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->setAttributes(['data-toggle' => 'tab', 'role' => 'tab']);
-        $this->addBaseClass('nav-link');
+        $this->element()->setAttributes(['data-toggle' => 'tab', 'role' => 'tab']);
+        $this->element()->addBaseClass('nav-link');
         $this->addWrapper('li', ['class' => 'nav-item', 'role' => 'presentation']);
     }
 
@@ -28,7 +28,7 @@ class TabNavItemComponent extends BaseComponent
      */
     public function target(string $target): static
     {
-        $this->setAttribute('href', "#$target");
+        $this->element()->setAttribute('href', "#$target");
         return $this;
     }
 
@@ -39,7 +39,7 @@ class TabNavItemComponent extends BaseComponent
      */
     public function active(bool $active = false): static
     {
-        $active && $this->addClass('active');
+        $active && $this->element()->addClass('active');
         return $this;
     }
 
@@ -50,7 +50,7 @@ class TabNavItemComponent extends BaseComponent
      */
     public function enabled(bool $enabled): static
     {
-        !$enabled && $this->addClass('disabled');
+        !$enabled && $this->element()->addClass('disabled');
         return $this;
     }
 }

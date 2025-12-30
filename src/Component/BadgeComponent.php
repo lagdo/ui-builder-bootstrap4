@@ -11,7 +11,7 @@ class BadgeComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('badge');
+        $this->element()->addBaseClass('badge');
     }
 
     /**
@@ -21,7 +21,7 @@ class BadgeComponent extends BaseComponent
      */
     public function type(string $type): static
     {
-        $this->addClass("badge-$type");
+        $this->element()->addClass("badge-$type");
         return $this;
     }
 
@@ -32,7 +32,7 @@ class BadgeComponent extends BaseComponent
      */
     public function rounded(string $rounded): static
     {
-        $this->addClass('badge-pill');
+        $this->element()->addClass('badge-pill');
         return $this;
     }
 }

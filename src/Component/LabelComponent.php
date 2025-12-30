@@ -11,14 +11,6 @@ use function is_a;
 class LabelComponent extends BaseComponent
 {
     /**
-     * @return void
-     */
-    protected function onCreate(): void
-    {
-        $this->name = 'label';
-    }
-
-    /**
      * @param HtmlComponent $parent
      *
      * @return void
@@ -27,7 +19,7 @@ class LabelComponent extends BaseComponent
     {
         // A label in an input group must be wrapped into a span with class "input-group-prepend".
         if (is_a($parent, InputGroupComponent::class)) {
-            $this->addBaseClass('input-group-text');
+            $this->element()->addBaseClass('input-group-text');
             $this->addWrapper('div', ['class' => 'input-group-prepend']);
         }
     }

@@ -11,9 +11,9 @@ class DropdownItemComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('btn');
-        $this->addClass('dropdown-toggle');
-        $this->setAttributes(['data-toggle' => 'dropdown',
+        $this->element()->addBaseClass('btn');
+        $this->element()->addClass('dropdown-toggle');
+        $this->element()->setAttributes(['data-toggle' => 'dropdown',
             'aria-haspopup' => 'true', 'aria-expanded' => 'false']);
     }
 
@@ -24,7 +24,7 @@ class DropdownItemComponent extends BaseComponent
      */
     public function look(string $style): static
     {
-        $this->addBaseClass("btn-$style");
+        $this->element()->addBaseClass("btn-$style");
         return $this;
     }
 }

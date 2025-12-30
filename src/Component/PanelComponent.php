@@ -11,7 +11,7 @@ class PanelComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('card w-100');
+        $this->element()->addBaseClass('card w-100');
     }
 
     /**
@@ -21,7 +21,7 @@ class PanelComponent extends BaseComponent
      */
     public function look(string $style): static
     {
-        $this->addClass("border-$style");
+        $this->element()->addClass("border-$style");
         return $this;
     }
 }

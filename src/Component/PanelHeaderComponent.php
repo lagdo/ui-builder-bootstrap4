@@ -11,7 +11,7 @@ class PanelHeaderComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('card-header');
+        $this->element()->addBaseClass('card-header');
     }
 
     /**
@@ -21,7 +21,7 @@ class PanelHeaderComponent extends BaseComponent
      */
     public function look(string $style): static
     {
-        $this->addClass("border-$style");
+        $this->element()->addClass("border-$style");
         return $this;
     }
 }

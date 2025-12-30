@@ -11,7 +11,7 @@ class PanelFooterComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('card-footer');
+        $this->element()->addBaseClass('card-footer');
     }
 
     /**
@@ -21,7 +21,7 @@ class PanelFooterComponent extends BaseComponent
      */
     public function look(string $style): static
     {
-        $this->addClass("border-$style");
+        $this->element()->addClass("border-$style");
         return $this;
     }
 }

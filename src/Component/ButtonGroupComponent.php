@@ -11,8 +11,8 @@ class ButtonGroupComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('btn-group');
-        $this->setAttribute('role', 'group');
+        $this->element()->addBaseClass('btn-group');
+        $this->element()->setAttribute('role', 'group');
     }
 
     /**
@@ -20,7 +20,7 @@ class ButtonGroupComponent extends BaseComponent
      */
     public function fullWidth(): static
     {
-        $this->addClass('d-flex');
+        $this->element()->addClass('d-flex');
         return $this;
     }
 }
