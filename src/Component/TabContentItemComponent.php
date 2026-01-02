@@ -2,7 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\TabContentItemComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\Base\TabContentItemComponent as BaseComponent;
 
 class TabContentItemComponent extends BaseComponent
 {

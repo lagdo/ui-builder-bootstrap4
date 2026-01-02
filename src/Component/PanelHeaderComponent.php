@@ -2,7 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\PanelHeaderComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\Base\PanelHeaderComponent as BaseComponent;
 
 class PanelHeaderComponent extends BaseComponent
 {

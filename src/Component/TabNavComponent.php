@@ -2,7 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\TabNavComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\Base\TabNavComponent as BaseComponent;
 
 class TabNavComponent extends BaseComponent
 {

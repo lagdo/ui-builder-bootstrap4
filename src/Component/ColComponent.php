@@ -2,7 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\ColComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\Base\ColComponent as BaseComponent;
 
 class ColComponent extends BaseComponent
 {

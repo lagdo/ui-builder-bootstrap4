@@ -2,7 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\MenuItemComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\Base\MenuItemComponent as BaseComponent;
 
 class MenuItemComponent extends BaseComponent
 {

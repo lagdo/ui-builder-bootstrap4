@@ -2,7 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\FormComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\Base\FormComponent as BaseComponent;
 
 class FormComponent extends BaseComponent
 {
