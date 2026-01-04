@@ -12,5 +12,8 @@ class RowComponent extends BaseComponent
     protected function onCreate(): void
     {
         $this->element()->addBaseClass('row');
+        if ($this->inForm()) {
+            $this->element()->addBaseClass('form-group');
+        }
     }
 }

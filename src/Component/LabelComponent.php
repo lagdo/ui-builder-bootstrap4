@@ -17,6 +17,10 @@ class LabelComponent extends BaseComponent
      */
     protected function onBuild(HtmlComponent $parent): void
     {
+        if ($this->inForm()) {
+            $this->element()->addBaseClass('col-form-label');
+        }
+
         // A label in an input group must be wrapped into a span with class "input-group-prepend".
         if (is_a($parent, InputGroupComponent::class)) {
             $this->element()->addBaseClass('input-group-text');
