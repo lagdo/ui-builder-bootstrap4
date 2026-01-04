@@ -2,8 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Builder;
 
-use Lagdo\UiBuilder\Bootstrap4\Component\PaginationComponent;
-use Lagdo\UiBuilder\Bootstrap4\Component\PaginationItemComponent;
+use Lagdo\UiBuilder\Bootstrap4\Component;
 
 trait PaginationBuilderTrait
 {
@@ -12,7 +11,7 @@ trait PaginationBuilderTrait
      */
     protected function _initPaginationBuilder(): void
     {
-        $this->paginationComponentClass = PaginationComponent::class;
-        $this->paginationItemComponentClass = PaginationItemComponent::class;
+        $this->paginationComponentClass = Component\PaginationComponent::class;
+        $this->paginationItemComponentClass = Component\PaginationItemComponent::class;
     }
 }
