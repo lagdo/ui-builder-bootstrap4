@@ -21,7 +21,9 @@ class TabContentItemComponent extends BaseComponent
      */
     public function active(bool $active = false): static
     {
-        $active && $this->element()->addBaseClass('show active');
+        if ($active) {
+            $this->element()->addBaseClass('show active');
+        }
         return $this;
     }
 }

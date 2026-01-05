@@ -39,7 +39,9 @@ class TabNavItemComponent extends BaseComponent
      */
     public function active(bool $active = false): static
     {
-        $active && $this->element()->addClass('active');
+        if ($active) {
+            $this->element()->addClass('active');
+        }
         return $this;
     }
 
@@ -50,7 +52,9 @@ class TabNavItemComponent extends BaseComponent
      */
     public function enabled(bool $enabled): static
     {
-        !$enabled && $this->element()->addClass('disabled');
+        if (!$enabled) {
+            $this->element()->addClass('disabled');
+        }
         return $this;
     }
 }

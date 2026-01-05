@@ -6,6 +6,8 @@ use Lagdo\UiBuilder\Component\Base\CheckboxComponent as BaseComponent;
 use Lagdo\UiBuilder\Component\Base\InputGroupComponent;
 use Lagdo\UiBuilder\Component\HtmlComponent;
 
+use function is_a;
+
 class CheckboxComponent extends BaseComponent
 {
     /**

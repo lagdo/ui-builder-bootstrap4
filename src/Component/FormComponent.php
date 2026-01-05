@@ -19,7 +19,9 @@ class FormComponent extends BaseComponent
      */
     public function wrapped(bool $wrapped = true): static
     {
-        $wrapped && $this->addWrapper('div', ['class' => 'portlet-body form']);
+        if ($wrapped) {
+            $this->addWrapper('div', ['class' => 'portlet-body form']);
+        }
         return $this;
     }
 }
