@@ -13,4 +13,22 @@ class MenuComponent extends BaseComponent
     {
         $this->element()->addBaseClass('list-group');
     }
+
+    /**
+     * @return static
+     */
+    public function vertical(): static
+    {
+        // Nothing to do. It is the default.
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public function horizontal(): static
+    {
+        $this->element()->addClass('list-group-horizontal');
+        return $this;
+    }
 }

@@ -12,7 +12,7 @@ class PaginationItemComponent extends BaseComponent
     protected function onCreate(): void
     {
         $this->element()->addBaseClass('page-link');
-        $this->addWrapper('li', ['class' => 'page-item']);
+        $this->addWrapper($this->newElement('li', ['class' => 'page-item']));
     }
 
     /**

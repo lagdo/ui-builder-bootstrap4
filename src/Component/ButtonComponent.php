@@ -40,7 +40,7 @@ class ButtonComponent extends BaseComponent
         }
         // A button in an input group must be wrapped into a div with class "input-group-append".
         if (is_a($parent, InputGroupComponent::class)) {
-            $this->addWrapper('div', ['class' => 'input-group-append']);
+            $this->addWrapper($this->newElement('div', ['class' => 'input-group-append']));
         }
     }
 

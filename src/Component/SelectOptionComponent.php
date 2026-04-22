@@ -2,10 +2,10 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\Base\OptionComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\Base\SelectOptionComponent as BaseComponent;
 use Lagdo\UiBuilder\Component\HtmlComponent;
 
-class OptionComponent extends BaseComponent
+class SelectOptionComponent extends BaseComponent
 {
     /**
      * @param HtmlComponent $parent

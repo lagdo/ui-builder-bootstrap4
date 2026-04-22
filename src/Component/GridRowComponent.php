@@ -2,9 +2,9 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\Base\RowComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\Base\GridRowComponent as BaseComponent;
 
-class RowComponent extends BaseComponent
+class GridRowComponent extends BaseComponent
 {
     /**
      * @return void
