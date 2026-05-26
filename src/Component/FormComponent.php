@@ -9,19 +9,9 @@ class FormComponent extends BaseComponent
     /**
      * @inheritDoc
      */
-    public function horizontal(bool $horizontal = true): static
+    public function wrapped(): static
     {
-        return $this;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function wrapped(bool $wrapped = true): static
-    {
-        if ($wrapped) {
-            $this->addWrapper($this->newElement('div', ['class' => 'portlet-body form']));
-        }
+        $this->addWrapper($this->newElement('div', ['class' => 'portlet-body form']));
         return $this;
     }
 }
