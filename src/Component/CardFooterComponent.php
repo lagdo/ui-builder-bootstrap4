@@ -13,15 +13,4 @@ class CardFooterComponent extends BaseComponent
     {
         $this->element()->addBaseClass('card-footer');
     }
-
-    /**
-     * @param string $style
-     *
-     * @return static
-     */
-    public function skin(string $style): static
-    {
-        $this->element()->addClass("border-$style");
-        return $this;
-    }
 }

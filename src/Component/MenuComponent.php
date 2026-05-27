@@ -15,20 +15,13 @@ class MenuComponent extends BaseComponent
     }
 
     /**
-     * @return static
+     * @return void
      */
-    public function vertical(): static
+    protected function onBuild(): void
     {
-        // Nothing to do. It is the default.
-        return $this;
-    }
-
-    /**
-     * @return static
-     */
-    public function horizontal(): static
-    {
-        $this->element()->addClass('list-group-horizontal');
-        return $this;
+        // Vertical is the default. Nothing to do.
+        if ($this->prop('horizontal', false)) {
+            $this->element()->addClass('list-group-horizontal');
+        }
     }
 }

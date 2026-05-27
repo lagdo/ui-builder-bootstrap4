@@ -13,4 +13,14 @@ class BreadcrumbItemComponent extends BaseComponent
     {
         $this->element()->addBaseClass('breadcrumb-item');
     }
+
+    /**
+     * @return void
+     */
+    protected function onBuild(): void
+    {
+        if ($this->prop('active', false)) {
+            $this->element()->addClass('active');
+        }
+    }
 }

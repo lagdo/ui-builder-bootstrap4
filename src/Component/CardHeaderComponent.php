@@ -13,15 +13,4 @@ class CardHeaderComponent extends BaseComponent
     {
         $this->element()->addBaseClass('card-header');
     }
-
-    /**
-     * @param string $style
-     *
-     * @return static
-     */
-    public function skin(string $style): static
-    {
-        $this->element()->addClass("border-$style");
-        return $this;
-    }
 }

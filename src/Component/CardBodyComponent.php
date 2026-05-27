@@ -13,15 +13,4 @@ class CardBodyComponent extends BaseComponent
     {
         $this->element()->addBaseClass('card-body');
     }
-
-    /**
-     * @param string $style
-     *
-     * @return static
-     */
-    public function skin(string $style): static
-    {
-        $this->element()->addClass("text-$style");
-        return $this;
-    }
 }

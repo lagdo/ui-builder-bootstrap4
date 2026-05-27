@@ -15,24 +15,12 @@ class BadgeComponent extends BaseComponent
     }
 
     /**
-     * @param string $type
-     *
-     * @return static
+     * @inheritDoc
      */
-    public function type(string $type): static
+    protected function onBuild(): void
     {
+        $type = $this->prop('alert') ?? $this->prop('visual', null);
+        $type = $type?->value ?? 'light';
         $this->element()->addClass("badge-$type");
-        return $this;
-    }
-
-    /**
-     * @param string $rounded
-     *
-     * @return static
-     */
-    public function rounded(string $rounded): static
-    {
-        $this->element()->addClass('badge-pill');
-        return $this;
     }
 }

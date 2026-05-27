@@ -16,27 +16,15 @@ class PaginationItemComponent extends BaseComponent
     }
 
     /**
-     * @param bool $active
-     *
-     * @return static
+     * @return void
      */
-    public function active(bool $active): static
+    protected function onBuild(): void
     {
-        if ($active) {
-            $this->wrapper(0)->setClass('active');
+        $wrapper = $this->wrapper(0);
+        if ($this->prop('active', false)) {
+            $wrapper->addClass('active');
         }
-        return $this;
-    }
-
-    /**
-     * @param bool $enabled
-     *
-     * @return static
-     */
-    public function enabled(bool $enabled): static
-    {
-        $this->wrapper(0)->setClass($enabled ? 'enabled' : 'disabled');
-        return $this;
+        $wrapper->addClass($this->prop('enabled', true) ? 'enabled' : 'disabled');
     }
 
     /**
