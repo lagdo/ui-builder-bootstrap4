@@ -19,8 +19,8 @@ class BadgeComponent extends BaseComponent
      */
     protected function onBuild(): void
     {
-        $type = $this->prop('alert') ?? $this->prop('visual', null);
-        $type = $type?->value ?? 'light';
-        $this->element()->addClass("badge-$type");
+        $visual = $this->prop('visual', null);
+        $visual = $visual?->value ?? 'light';
+        $this->element()->addClass("badge-$visual");
     }
 }
