@@ -2,10 +2,10 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\Base\CheckboxComponent as BaseComponent;
-use Lagdo\UiBuilder\Component\Base\InputGroupComponent;
-use Lagdo\UiBuilder\Component\HtmlElement;
-use Lagdo\UiBuilder\Component\Html\Text;
+use Lagdo\UiBuilder\Component\CheckboxComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\InputGroupComponent;
+use Lagdo\UiBuilder\Html\HtmlElement;
+use Lagdo\UiBuilder\Html\Element\Text;
 
 use function is_a;
 
@@ -35,10 +35,7 @@ class CheckboxComponent extends BaseComponent
     }
 
     /**
-     * @param HtmlElement $label
-     * @param Text $text
-     *
-     * @return void
+     * @inheritDoc
      */
     protected function setLabel(HtmlElement $label, Text $text): void
     {

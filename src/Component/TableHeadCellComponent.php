@@ -2,7 +2,7 @@
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
-use Lagdo\UiBuilder\Component\Base\TableHeadCellComponent as BaseComponent;
+use Lagdo\UiBuilder\Component\TableHeadCellComponent as BaseComponent;
 
 use function get_class;
 
