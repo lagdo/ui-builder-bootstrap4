@@ -16,7 +16,7 @@ class CheckboxComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->element()->addBaseClass('form-check-input');
+        $this->addBaseClass('form-check-input');
         $this->element()->setAttribute('type', 'checkbox');
     }
 

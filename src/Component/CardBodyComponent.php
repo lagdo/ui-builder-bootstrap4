@@ -11,6 +11,6 @@ class CardBodyComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->element()->addBaseClass('card-body');
+        $this->addBaseClass('card-body');
     }
 }

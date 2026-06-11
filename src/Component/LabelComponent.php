@@ -15,12 +15,12 @@ class LabelComponent extends BaseComponent
     protected function onBuild(): void
     {
         if ($this->inForm()) {
-            $this->element()->addBaseClass('col-form-label');
+            $this->addBaseClass('col-form-label');
         }
 
         // A label in an input group must be wrapped into a span with class "input-group-prepend".
         if (is_a($this->parent(), InputGroupComponent::class)) {
-            $this->element()->addBaseClass('input-group-text');
+            $this->addBaseClass('input-group-text');
             $this->addWrapper($this->newElement('div', ['class' => 'input-group-prepend']));
         }
     }

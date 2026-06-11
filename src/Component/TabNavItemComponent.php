@@ -17,7 +17,7 @@ class TabNavItemComponent extends BaseComponent
     protected function onCreate(): void
     {
         $this->element()->setAttributes(['data-toggle' => 'tab', 'role' => 'tab']);
-        $this->element()->addBaseClass('nav-link');
+        $this->addBaseClass('nav-link');
         $this->addWrapper($this->newElement('li', ['class' => 'nav-item', 'role' => 'presentation']));
     }
 

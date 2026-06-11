@@ -11,7 +11,7 @@ class BreadcrumbItemComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->element()->addBaseClass('breadcrumb-item');
+        $this->addBaseClass('breadcrumb-item');
     }
 
     /**

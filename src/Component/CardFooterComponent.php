@@ -11,6 +11,6 @@ class CardFooterComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->element()->addBaseClass('card-footer');
+        $this->addBaseClass('card-footer');
     }
 }
