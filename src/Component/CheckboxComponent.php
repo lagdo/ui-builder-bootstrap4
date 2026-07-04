@@ -39,7 +39,7 @@ class CheckboxComponent extends BaseComponent
      */
     protected function setLabel(HtmlElement $label, Text $text): void
     {
-        $label->addBaseClass('form-label')->addChild($text);
+        $label->addClass('form-label')->addChild($text);
         $this->appendSibling($label);
     }
 }
