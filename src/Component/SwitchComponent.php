@@ -3,8 +3,8 @@
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
 use Lagdo\UiBuilder\Component\SwitchComponent as BaseComponent;
-use Lagdo\UiBuilder\Html\HtmlElement;
-use Lagdo\UiBuilder\Html\Element\Text;
+use Lagdo\HtmlBuilder\HtmlElement;
+use Lagdo\HtmlBuilder\Element\Text;
 
 class SwitchComponent extends BaseComponent
 {

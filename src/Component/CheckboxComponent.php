@@ -5,8 +5,8 @@ namespace Lagdo\UiBuilder\Bootstrap4\Component;
 use Lagdo\UiBuilder\Component\CheckboxComponent as BaseComponent;
 use Lagdo\UiBuilder\Component\CheckboxGroupComponent;
 use Lagdo\UiBuilder\Component\InputGroupComponent;
-use Lagdo\UiBuilder\Html\HtmlElement;
-use Lagdo\UiBuilder\Html\Element\Text;
+use Lagdo\HtmlBuilder\HtmlElement;
+use Lagdo\HtmlBuilder\Element\Text;
 
 use function is_a;
 
