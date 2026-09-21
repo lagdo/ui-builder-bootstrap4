@@ -17,13 +17,13 @@
     },
     "require": {
         "php": ">=8.0",
-        "lagdo/ui-builder": "0.13.*"
+        "lagdo/ui-builder": "0.14.*"
     },
     "autoload": {
         "psr-4": {
             "Lagdo\\UiBuilder\\Bootstrap4\\": "src/"
         }
     },
-    "minimum-stability": "stable",
-    "prefer-stable": false
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
