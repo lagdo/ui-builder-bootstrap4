@@ -35,7 +35,7 @@ class RadioComponent extends BaseComponent
         }
 
         $wrapperClass = is_a($parent, RadioGroupComponent::class) &&
-            ($parent->properties['horizontal'] ?? false) ?
+            ($parent->prop('horizontal', false)) ?
                 'form-check form-check-inline' : 'form-check';
         $this->addWrapper($this->newElement('div', ['class' =>  $wrapperClass]));
     }
