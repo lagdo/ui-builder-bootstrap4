@@ -26,7 +26,10 @@ class ButtonComponent extends BaseComponent
         $visual = $this->prop('visual', null);
         $prefix = $visual === null || $this->prop('outline', false) ?
             'btn-outline-' : 'btn-';
-        $this->element()->addClass($prefix . ($visual?->value ?? 'secondary'));
+        if (($value = $visual?->value ?? 'secondary') === 'error') {
+            $value = 'danger';
+        }
+        $this->element()->addClass($prefix . $value);
 
         switch($this->prop('size', null)) {
         case SizeEnum::LARGE:

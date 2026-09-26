@@ -29,6 +29,9 @@ class TabNavItemComponent extends BaseComponent
         if ($this->prop('active', false)) {
             $this->element()->addClass('active');
         }
+        if (!$this->prop('enabled', true)) {
+            $this->element()->addClass('disabled');
+        }
     }
 
     /**
