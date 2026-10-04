@@ -14,8 +14,10 @@ class DropdownButtonComponent extends BaseComponent
     {
         $this->addBaseClass('btn');
         $this->element()->addClass('dropdown-toggle');
-        $this->element()->setAttributes(['data-toggle' => 'dropdown',
-            'aria-haspopup' => 'true', 'aria-expanded' => 'false']);
+        $this->element()->setAttributes([
+            'data-toggle' => 'dropdown',
+            'aria-expanded' => 'false',
+        ]);
     }
 
     /**

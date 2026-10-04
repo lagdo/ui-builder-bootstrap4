@@ -11,7 +11,6 @@ class DropdownComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('btn-group');
-        $this->element()->setAttribute('role', 'group');
+        $this->addBaseClass('dropdown');
     }
 }

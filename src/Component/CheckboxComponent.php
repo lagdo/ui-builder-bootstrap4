@@ -6,7 +6,7 @@ use Lagdo\UiBuilder\Component\CheckboxComponent as BaseComponent;
 use Lagdo\UiBuilder\Component\CheckboxGroupComponent;
 use Lagdo\UiBuilder\Component\InputGroupComponent;
 use Lagdo\HtmlBuilder\HtmlElement;
-use Lagdo\HtmlBuilder\Element\Text;
+use Lagdo\HtmlBuilder\Element\Html;
 
 use function is_a;
 
@@ -45,9 +45,9 @@ class CheckboxComponent extends BaseComponent
     /**
      * @inheritDoc
      */
-    protected function setLabel(HtmlElement $label, Text $text): void
+    protected function setLabel(HtmlElement $label, Html $html): void
     {
-        $label->addClass('form-check-label')->addChild($text);
+        $label->addClass('form-check-label')->addChild($html);
         $this->appendSibling($label);
     }
 }

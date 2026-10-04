@@ -4,7 +4,7 @@ namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
 use Lagdo\UiBuilder\Component\SelectComponent as BaseComponent;
 use Lagdo\HtmlBuilder\HtmlElement;
-use Lagdo\HtmlBuilder\Element\Text;
+use Lagdo\HtmlBuilder\Element\Html;
 
 class SelectComponent extends BaseComponent
 {
@@ -21,9 +21,9 @@ class SelectComponent extends BaseComponent
     /**
      * @inheritDoc
      */
-    protected function setLabel(HtmlElement $label, Text $text): void
+    protected function setLabel(HtmlElement $label, Html $html): void
     {
-        $label->addClass('form-label')->addChild($text);
+        $label->addClass('form-label')->addChild($html);
         $this->prependSibling($label);
     }
 }

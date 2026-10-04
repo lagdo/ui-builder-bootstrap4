@@ -4,7 +4,7 @@ namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
 use Lagdo\UiBuilder\Component\SwitchComponent as BaseComponent;
 use Lagdo\HtmlBuilder\HtmlElement;
-use Lagdo\HtmlBuilder\Element\Text;
+use Lagdo\HtmlBuilder\Element\Html;
 
 class SwitchComponent extends BaseComponent
 {
@@ -21,9 +21,9 @@ class SwitchComponent extends BaseComponent
     /**
      * @inheritDoc
      */
-    protected function setLabel(HtmlElement $label, Text $text): void
+    protected function setLabel(HtmlElement $label, Html $html): void
     {
-        $label->addClass('custom-control-label')->addChild($text);
+        $label->addClass('custom-control-label')->addChild($html);
         $this->appendSibling($label);
     }
 }
