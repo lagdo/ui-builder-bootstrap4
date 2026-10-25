@@ -22,7 +22,7 @@ class MenuComponent extends BaseComponent
     protected function onBuild(): void
     {
         // Vertical is the default. Nothing to do.
-        if ($this->prop('horizontal', false)) {
+        if ($this->isVertical()) {
             $this->element()->addClass('list-group-horizontal');
         }
     }
