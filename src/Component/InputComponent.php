@@ -5,27 +5,20 @@ declare(strict_types=1);
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
 use Lagdo\UiBuilder\Component\InputComponent as BaseComponent;
-use Lagdo\HtmlBuilder\HtmlElement;
-use Lagdo\HtmlBuilder\Element\Html;
 
 class InputComponent extends BaseComponent
 {
+    use Mixin\ValidationTrait;
+
     /**
      * @return void
      */
     protected function onBuild(): void
     {
-        if ($this->inForm()) {
-            $this->addBaseClass('form-control');
+        if ($this->element()->getAttribute('type') === 'hidden') {
+            return;
         }
-    }
 
-    /**
-     * @inheritDoc
-     */
-    protected function setLabel(HtmlElement $label, Html $html): void
-    {
-        $label->addClass('form-label')->addChild($html);
-        $this->prependSibling($label);
+        $this->addBaseClass('form-control');
     }
 }

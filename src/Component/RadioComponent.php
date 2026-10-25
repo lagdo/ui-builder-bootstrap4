@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
+use Lagdo\HtmlBuilder\Element\Html;
 use Lagdo\UiBuilder\Component\RadioComponent as BaseComponent;
 use Lagdo\UiBuilder\Component\InputGroupComponent;
 use Lagdo\UiBuilder\Component\RadioGroupComponent;
-use Lagdo\HtmlBuilder\Element\Html;
 
 class RadioComponent extends BaseComponent
 {
