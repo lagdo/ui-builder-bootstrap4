@@ -29,6 +29,7 @@ class Builder extends AbstractBuilder
         $this->dropdownMenuItemComponentClass = Component\DropdownMenuItemComponent::class;
         // Form components
         $this->formComponentClass = Component\FormComponent::class;
+        $this->formFieldComponentClass = Component\FormFieldComponent::class;
         $this->labelComponentClass = Component\LabelComponent::class;
         $this->inputComponentClass = Component\InputComponent::class;
         $this->textareaComponentClass = Component\TextareaComponent::class;
