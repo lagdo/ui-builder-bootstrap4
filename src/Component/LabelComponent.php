@@ -19,7 +19,7 @@ class LabelComponent extends BaseComponent
         // A label in an input group must be wrapped into a span with class "input-group-prepend".
         if (is_a($this->parent(), InputGroupComponent::class)) {
             $this->addBaseClass('input-group-text');
-            $this->addWrapper($this->newElement('div', ['class' => 'input-group-prepend']));
+            $this->wrapElement($this->newElement('div', ['class' => 'input-group-prepend']));
         }
     }
 }

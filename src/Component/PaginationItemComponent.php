@@ -14,7 +14,7 @@ class PaginationItemComponent extends BaseComponent
     protected function onCreate(): void
     {
         $this->addBaseClass('page-link');
-        $this->addWrapper($this->newElement('li', ['class' => 'page-item']));
+        $this->wrapElement($this->newElement('li', ['class' => 'page-item']));
     }
 
     /**
@@ -22,7 +22,7 @@ class PaginationItemComponent extends BaseComponent
      */
     protected function onBuild(): void
     {
-        $wrapper = $this->wrapper(0);
+        $wrapper = $this->wrapper(1);
         if ($this->prop('active', false)) {
             $wrapper->addClass('active');
         }
@@ -36,7 +36,7 @@ class PaginationItemComponent extends BaseComponent
      */
     public function number(int $number): static
     {
-        $this->wrapper(0)->setAttribute('data-page', $number);
+        $this->wrapper(1)->setAttribute('data-page', "$number");
         return $this;
     }
 }

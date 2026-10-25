@@ -20,7 +20,7 @@ class TabNavItemComponent extends BaseComponent
     {
         $this->element()->setAttributes(['data-toggle' => 'tab', 'role' => 'tab']);
         $this->addBaseClass('nav-link');
-        $this->addWrapper($this->newElement('li', ['class' => 'nav-item', 'role' => 'presentation']));
+        $this->wrapElement($this->newElement('li', ['class' => 'nav-item', 'role' => 'presentation']));
     }
 
     /**
