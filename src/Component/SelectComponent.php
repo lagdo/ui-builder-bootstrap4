@@ -17,7 +17,7 @@ class SelectComponent extends BaseComponent
     {
         $this->addBaseClass('custom-select');
         if ($this->prop('shrink', false)) {
-            $this->addClass('w-auto')->setStyle('flex: 0 1 auto;');
+            $this->addClass('w-auto')->addStyle('flex', '0 1 auto');
         }
     }
 }
