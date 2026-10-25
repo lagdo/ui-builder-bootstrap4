@@ -39,13 +39,13 @@ class TabNavComponent extends BaseComponent
     }
 
     /**
-     * @param bool $justified
+     * @param bool $filled
      *
      * @return static
      */
-    public function fill(bool $justified = false): static
+    public function fill(bool $filled = true): static
     {
-        $this->element()->addClass($justified ? 'nav-fill' : 'nav-justified');
+        $this->element()->addClass($filled ? 'nav-fill' : 'nav-justified');
         return $this;
     }
 
