@@ -42,8 +42,8 @@ class Builder extends AbstractBuilder
         $this->selectOptionComponentClass = Component\SelectOptionComponent::class;
         $this->inputGroupComponentClass = Component\InputGroupComponent::class;
         // Menu components
-        $this->menuComponentClass = Component\MenuComponent::class;
-        $this->menuItemComponentClass = Component\MenuItemComponent::class;
+        $this->panelMenuComponentClass = Component\PanelMenuComponent::class;
+        $this->panelMenuItemComponentClass = Component\PanelMenuItemComponent::class;
         $this->breadcrumbComponentClass = Component\BreadcrumbComponent::class;
         $this->breadcrumbItemComponentClass = Component\BreadcrumbItemComponent::class;
         // Pagination components
