@@ -13,8 +13,6 @@ class SelectOptionComponent extends BaseComponent
      */
     protected function onBuild(): void
     {
-        if ($this->inForm()) {
-            $this->addBaseClass('form-control');
-        }
+        $this->addBaseClass('form-control');
     }
 }

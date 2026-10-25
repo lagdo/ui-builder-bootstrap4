@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Lagdo\UiBuilder\Bootstrap4\Component;
 
+use Lagdo\HtmlBuilder\Element\Html;
 use Lagdo\UiBuilder\Component\CheckboxComponent as BaseComponent;
 use Lagdo\UiBuilder\Component\CheckboxGroupComponent;
 use Lagdo\UiBuilder\Component\InputGroupComponent;
-use Lagdo\HtmlBuilder\Element\Html;
 
 use function is_a;
 
