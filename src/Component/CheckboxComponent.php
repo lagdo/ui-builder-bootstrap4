@@ -7,13 +7,14 @@ namespace Lagdo\UiBuilder\Bootstrap4\Component;
 use Lagdo\UiBuilder\Component\CheckboxComponent as BaseComponent;
 use Lagdo\UiBuilder\Component\CheckboxGroupComponent;
 use Lagdo\UiBuilder\Component\InputGroupComponent;
-use Lagdo\HtmlBuilder\HtmlElement;
 use Lagdo\HtmlBuilder\Element\Html;
 
 use function is_a;
 
 class CheckboxComponent extends BaseComponent
 {
+    use Mixin\ValidationTrait;
+
     /**
      * @return void
      */
@@ -38,17 +39,17 @@ class CheckboxComponent extends BaseComponent
             return;
         }
 
-        $wrapperClass = is_a($parent, CheckboxGroupComponent::class) &&
-            ($parent->isVertical()) ?
-                'form-check form-check-inline' : 'form-check';
+        $wrapperClass = is_a($parent, CheckboxGroupComponent::class) && $parent->isVertical() ?
+            'form-check form-check-inline' : 'form-check';
         $this->wrapElement($this->newElement('div', ['class' =>  $wrapperClass]));
     }
 
     /**
      * @inheritDoc
      */
-    protected function setLabel(HtmlElement $label, Html $html): void
+    protected function setLabel(Html $html, array $attributes): void
     {
+        $label = $this->newElement('label', $attributes);
         $label->addClass('form-check-label')->addChild($html);
         $this->appendSibling($label);
     }
