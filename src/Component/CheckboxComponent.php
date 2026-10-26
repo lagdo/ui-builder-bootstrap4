@@ -40,7 +40,7 @@ class CheckboxComponent extends BaseComponent
         }
 
         $wrapperClass = is_a($parent, CheckboxGroupComponent::class) && $parent->isVertical() ?
-            'form-check form-check-inline' : 'form-check';
+            'form-check' : 'form-check form-check-inline';
         $this->wrapElement($this->newElement('div', ['class' =>  $wrapperClass]));
     }
 
