@@ -7,6 +7,8 @@ namespace Lagdo\UiBuilder\Bootstrap4\Component;
 use Lagdo\UiBuilder\Component\Attr\SizeEnum;
 use Lagdo\UiBuilder\Component\DropdownButtonComponent as BaseComponent;
 
+use function count;
+
 class DropdownButtonComponent extends BaseComponent
 {
     /**
@@ -14,12 +16,11 @@ class DropdownButtonComponent extends BaseComponent
      */
     protected function onCreate(): void
     {
-        $this->addBaseClass('btn');
-        $this->element()->addClass('dropdown-toggle');
-        $this->element()->setAttributes([
-            'data-toggle' => 'dropdown',
-            'aria-expanded' => 'false',
-        ]);
+        $this->addBaseClass('btn')
+            ->setAttributes([
+                'data-toggle' => 'dropdown',
+                'aria-expanded' => 'false',
+            ]);
     }
 
     /**
@@ -27,6 +28,10 @@ class DropdownButtonComponent extends BaseComponent
      */
     protected function onBuild(): void
     {
+        if (count($this->children()) === 0) {
+            $this->addBaseClass('dropdown-toggle');
+        }
+
         $visual = $this->prop('visual', null);
         $prefix = $visual === null || $this->prop('outline', false) ?
             'btn-outline-' : 'btn-';
